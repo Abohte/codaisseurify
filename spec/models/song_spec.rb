@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Song, type: :model do
   describe "Validations" do
-    it "is invalid without a name" do
-      song = Song.new(name: nil)
+    it "is invalid without a title" do
+      song = Song.new(title: nil)
       song.valid?
-      expect(song.errors).to have_key(:name)
+      expect(song.errors).to have_key(:title)
     end
 
     it "is invalid without a year" do
