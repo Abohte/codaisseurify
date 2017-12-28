@@ -1,0 +1,20 @@
+<div class="container">
+  <h2 class="text-center"><%= @artist.name %></h2>
+  <h4 class="text-center"><%= @artist.artist_type %></h4>
+
+
+  <div class="row">
+      <ul class="list-group">
+        <% @artist.songs.each do |song| %>
+          <li class="list-group-item">
+            <%= song.title %> - <%= song.year %>
+            <span class="pull-right">
+              <button class="btn btn-xs btn-warning">
+                <%= link_to "", artist_song_path(@artist, song), class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: "Are you sure?" } %>
+              </button>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>

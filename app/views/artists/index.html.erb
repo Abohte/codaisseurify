@@ -1,5 +1,11 @@
-<h2>Have a look at all our beautiful artists</h2>
+<div class="container">
+  <h2 class="text-center">Artists</h2>
 
-<% @artists.each do |artist| %>
-  <p><%=link_to artist.name, artist_path(artist.id)%></p>
-<% end %>
+  <ul class="list-group">
+  <% @artists.each do |artist| %>
+     <li class="list-group-item justify-content-between">
+       <%=link_to artist.name, artist_path(artist.id)%>
+       <span class="badge badge-default badge-pill"><%= artist.songs.count %></span>
+    </li>
+  <% end %>
+</div>
