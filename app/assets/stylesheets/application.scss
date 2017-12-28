@@ -1,2 +1,49 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: #484848;
+}
+
+h2 {
+  color: white;
+}
+
+h4 {
+  color: lightgrey;
+}
+
+a.artist_link {
+  color: white;
+}
+
+a.artist_link:hover {
+  text-decoration: none;
+  color: #333333;
+}
+a.artist_link:focus {
+  text-decoration: none;
+  color: #333333;
+}
+
+.notice {
+  text-align: center;
+}
+
+.light-text {
+  color: lightgrey;
+}
+
+.btn-grey {
+  background-color: #484848;
+  color: lightgrey;
+}
+
+.glyphicon-trash {
+  color: white;
+}
+
+.list-group-item {
+  background-color: #808080;
+  color: #333333;
+}

@@ -4,12 +4,13 @@
 
 
   <div class="row">
+    <p class="light-text"> List of songs: </p>
       <ul class="list-group">
         <% @artist.songs.each do |song| %>
           <li class="list-group-item">
             <%= song.title %> - <%= song.year %>
             <span class="pull-right">
-              <button class="btn btn-xs btn-warning">
+              <button class="btn btn-xs btn-grey">
                 <%= link_to "", artist_song_path(@artist, song), class: "glyphicon glyphicon-trash", method: :delete, data: { confirm: "Are you sure?" } %>
               </button>
             </span>
@@ -17,4 +18,13 @@
         <% end %>
       </ul>
   </div>
+
+  <div>
+    <button class="btn btn-xs btn-grey">
+      <%= link_to "Add song", new_artist_song_path(@artist), class: "light-text" %>
+    </button>
+    <button class="btn btn-xs btn-grey">
+      <%= link_to "Delete Artist", artist_path, class: "light-text", method: :delete, data: { confirm: "Are you sure?" } %>
+    </button>
+  </div
 </div>

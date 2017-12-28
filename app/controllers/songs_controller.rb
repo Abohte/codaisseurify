@@ -4,8 +4,7 @@ before_action :set_song, only: [:destroy]
   def destroy
     @artist = @song.artist
     @song.destroy
-    flash[:success] = "Song deleted"
-    redirect_to @artist
+    redirect_to @artist, notice: "Song deleted"
   end
 
   private
