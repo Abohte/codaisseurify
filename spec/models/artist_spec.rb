@@ -21,9 +21,9 @@ RSpec.describe Artist, type: :model do
     end
 
     it "is invalid without a type" do
-      artist = Artist.new(type: nil)
+      artist = Artist.new(artist_type: nil)
       artist.valid?
-      expect(artist.errors).to have_key(:type)
+      expect(artist.errors).to have_key(:artist_type)
     end
   end
 
