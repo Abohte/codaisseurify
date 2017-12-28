@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :artist do
-    name "MyString"
-    description "MyText"
-    type ""
+    name          { Faker::Name.name }
+    description   { Faker::Lorem.sentence(50) }
+    type          "Artist"
   end
 end
