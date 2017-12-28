@@ -5,7 +5,14 @@
   <% @artists.each do |artist| %>
      <li class="list-group-item justify-content-between">
        <%=link_to artist.name, artist_path(artist.id)%>
-       <span class="badge badge-default badge-pill"><%= artist.songs.count %></span>
+       <span class="badge badge-default badge-pill">
+         <%= artist.songs.count %>
+         <% if artist.songs.count == 1 %>
+         <%= "song" %>
+         <% else %>
+         <%= "songs" %>
+         <% end %>
+         </span>
     </li>
   <% end %>
 </div>
