@@ -26,6 +26,11 @@ a.artist_link:focus {
   color: #333333;
 }
 
+.artist-name {
+  font-size: 150%;
+  font-weight: bold;
+}
+
 .notice {
   text-align: center;
 }
@@ -46,4 +51,9 @@ a.artist_link:focus {
 .list-group-item {
   background-color: #808080;
   color: #333333;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
 }

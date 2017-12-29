@@ -2,18 +2,25 @@
   <h2 class="text-center">Artists</h2>
   <br />
 
-  <ul class="list-group">
+  <ul class="col-sm-8 col-sm-offset-2 list-group artist-list">
   <% @artists.each do |artist| %>
      <li class="list-group-item justify-content-between">
-       <%=link_to artist.name, artist_path(artist.id), class: "artist_link"%>
-       <span class="badge badge-default badge-pill">
-         <%= artist.songs.count %>
-         <% if artist.songs.count == 1 %>
-         <%= "song" %>
-         <% else %>
-         <%= "songs" %>
-         <% end %>
-         </span>
+      <%= image_tag(artist.image, class: "img-rounded img-responsive") %>
+      <div class="row v-center">
+        <div class="col-xs-6 artist-name">
+          <%= link_to artist.name, artist_path(artist.id), class: "artist_link"%>
+        </div>
+        <div class="col-xs-6 ">
+          <span class="badge badge-default badge-pill col-md-6 pull-right">
+            <%= artist.songs.count %>
+            <% if artist.songs.count == 1 %>
+            <%= "song" %>
+            <% else %>
+            <%= "songs" %>
+            <% end %>
+          </span>
+        </div>
+      </div>
     </li>
   <% end %>
 </div>
