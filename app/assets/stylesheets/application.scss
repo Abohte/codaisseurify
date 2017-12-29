@@ -35,7 +35,7 @@ a.artist_link:focus {
   font-weight: bold;
 }
 
-.notice {
+.notice, .alert {
   text-align: center;
 }
 
@@ -45,6 +45,10 @@ a.artist_link:focus {
 
 .dark-text {
   color: #333333;
+}
+
+.alert-text {
+  color: #FF0000;
 }
 
 .btn-grey {

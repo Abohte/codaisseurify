@@ -6,6 +6,8 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    puts "show:"
+    puts params[:id]
     @song = Song.new
   end
 
@@ -17,6 +19,7 @@ class ArtistsController < ApplicationController
   private
 
   def set_artist
+    puts "setting artist"
     @artist = Artist.find(params[:id])
   end
 
