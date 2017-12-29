@@ -13,6 +13,10 @@ h4 {
   color: lightgrey;
 }
 
+a.home_link {
+  color: #1DB954;
+}
+
 a.artist_link {
   color: white;
 }
@@ -39,13 +43,21 @@ a.artist_link:focus {
   color: lightgrey;
 }
 
-.btn-grey {
-  background-color: #484848;
-  color: lightgrey;
+.dark-text {
+  color: #333333;
 }
 
-.glyphicon-trash {
+.btn-grey {
+  background-color: #484848;
+}
+
+.glyphicon {
+  background-color: #484848;
   color: white;
+}
+
+.alert {
+  margin-bottom: 0px;
 }
 
 .list-group-item {
@@ -56,4 +68,9 @@ a.artist_link:focus {
 .v-center {
   display: flex;
   align-items: center;
+}
+
+.header-image {
+  height: 30px;
+  margin-right: 10px;
 }

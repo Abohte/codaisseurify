@@ -1,0 +1,26 @@
+<% if @song.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @song do |f| %>
+  <div class="row">
+    <div class="col-xs-2 form-group">
+      <%= f.text_field :year, placeholder: "Year", class: "form-control" %>
+    </div>
+    <div class="col-xs-9 form-group">
+      <%= f.text_field :title, placeholder: "Song title", class: "form-control" %>
+    </div>
+    <%= f.hidden_field :artist_id, :value => artist.id %>
+    <div class="col-xs-1">
+      <button class="btn-grey submit" type="submit">
+        <span class="glyphicon glyphicon-ok"></span>
+      </button>
+    </div>
+  </div>
+<% end %>

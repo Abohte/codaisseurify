@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @song = Song.new
   end
 
   def destroy
