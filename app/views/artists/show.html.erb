@@ -18,7 +18,7 @@
   </div>
 
   <div class="row">
-    <p class="light-text"> Songs by <%= @artist.name %>: </p>
+    <p class="light-text"> Songs by <%= @artist.artist_type == "Band" ? "the #{@artist.name}" : @artist.name %>: </p>
       <ul class="list-group" id="song-list">
         <% @songs.each do |song| %>
           <%= render "songs/song_li", :song => song %>
