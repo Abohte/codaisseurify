@@ -15,7 +15,7 @@
   </div>
 
   <div class="row">
-    <p class="light-text"> List of songs: </p>
+    <p class="light-text"> Songs by <%= @artist.artist_type == "Band" ? "the #{@artist.name}" : @artist.name %>: </p>
       <ul class="list-group">
         <% @songs.each do |song| %>
           <li class="list-group-item">
