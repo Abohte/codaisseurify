@@ -12,9 +12,8 @@ function submitSong(event) {
 }
 
 function addSong(year, title, artistId) {
-  console.log(year, title, artistId);
 
-  var newSong = { year: year, title: title, artist_id: artistId };
+  var newSong = { year, title, artist_id: artistId };
 
   $.ajax({
     type: "POST",
@@ -27,6 +26,8 @@ function addSong(year, title, artistId) {
   })
   .done(function(data) {
     console.log(data);
+
+    var songList = $("#song-list")
 
 
   });

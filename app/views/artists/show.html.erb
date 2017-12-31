@@ -16,23 +16,9 @@
 
   <div class="row">
     <p class="light-text"> List of songs: </p>
-      <ul class="list-group">
+      <ul class="list-group" id="song-list">
         <% @songs.each do |song| %>
-          <li class="list-group-item" id="song-<%= song.id %>">
-            <div class="row">
-              <div class="col-xs-1">
-                <%= song.year %>
-              </div>
-              <div class="col-xs-10">
-                <%= song.title %>
-              </div>
-              <div class="col-xs-1">
-                <button class="btn btn-xs btn-grey pull-right">
-                  <span class="glyphicon glyphicon-remove delete-song"></span>
-                </button>
-              </div>
-            </div>
-          </li>
+          <%= render "songs/song_li", :song => song %>
         <% end %>
       </ul>
   </div>
