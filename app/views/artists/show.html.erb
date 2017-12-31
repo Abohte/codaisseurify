@@ -18,7 +18,7 @@
     <p class="light-text"> List of songs: </p>
       <ul class="list-group">
         <% @songs.each do |song| %>
-          <li class="list-group-item">
+          <li class="list-group-item" id="song-<%= song.id %>">
             <div class="row">
               <div class="col-xs-1">
                 <%= song.year %>
@@ -28,7 +28,7 @@
               </div>
               <div class="col-xs-1">
                 <button class="btn btn-xs btn-grey pull-right">
-                  <%= link_to "", song_path(song), class: "glyphicon glyphicon-remove", method: :delete, data: { confirm: "Are you sure?" } %>
+                  <span class="glyphicon glyphicon-remove delete-song"></span>
                 </button>
               </div>
             </div>
@@ -38,6 +38,5 @@
   </div>
 
   <%= render "songs/form", :artist => @artist %>
-
 
 </div>
