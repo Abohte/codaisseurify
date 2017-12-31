@@ -27,8 +27,28 @@ function addSong(year, title, artistId) {
   .done(function(data) {
     console.log(data);
 
-    var songList = $("#song-list")
+    var songId = data.id;
 
+    var span = $('<span class="glyphicon glyphicon-remove delete-song"></span>')
+      .click(deleteSong);
+
+    var button = $('<button class="btn btn-xs btn-grey pull-right"></button>')
+      .append($('<div class="col-xs-1">').append(span));
+
+    var titleDiv = $('<div class="col-xs-10"></div>')
+      .html(title);
+
+    var yearDiv = $('<div class="col-xs-1"></div')
+      .html(year);
+
+    var row = $('<div class="row"></div)')
+      .append(yearDiv).append(titleDiv).append(button);
+
+    var listItem = $('<li class="list-group-item"></li>')
+      .attr('id', songId)
+      .append(row);
+
+    $("#song-list").append(listItem);
 
   });
 }
