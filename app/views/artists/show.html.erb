@@ -1,13 +1,17 @@
 <div class="container">
   <div class="text-center">
-    <div class="col-md-10 col-md-offset-1 list-group artist-list">
-      <%= image_tag(@artist.image, class: "img-rounded img-responsive") %>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 list-group artist-list">
+        <%= image_tag(@artist.image, class: "img-rounded img-responsive") %>
+      </div>
     </div>
-    <h2><%= @artist.name %></h2>
-    <h4><%= @artist.artist_type %></h4>
-    <button class="btn btn-xs btn-grey">
-      <%= link_to "Delete Artist", artist_path, class: "dark-text", method: :delete, data: { confirm: "Are you sure?" } %>
-    </button>
+    <div>
+      <h2><%= @artist.name %></h2>
+      <h4><%= @artist.artist_type %></h4>
+      <button class="btn btn-xs btn-grey">
+        <%= link_to "Delete Artist", artist_path, class: "dark-text", method: :delete, data: { confirm: "Are you sure?" } %>
+      </button>
+    </div>
   </div>
 
   <div class="row">

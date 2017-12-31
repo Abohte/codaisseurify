@@ -1,5 +1,9 @@
 <div class="container">
-  <h2 class="text-center">Artists</h2>
+  <div class="text-center">
+    <h2>Artists</h2>
+    <%= link_to (@sort == "asc" ? "Sort Z-A" : "Sort A-Z"),
+    artists_path(:sort => @sort == "asc" ? "desc" : "asc"), class: "dark-text" %>
+  </div>
   <br />
 
   <ul class="col-md-10 col-md-offset-1 list-group artist-list">

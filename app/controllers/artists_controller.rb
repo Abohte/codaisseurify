@@ -2,12 +2,14 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :destroy]
 
   def index
-    @artists = Artist.all
+    @sort = params[:sort]
+    @artists = Artist.order_by_name
+    if @sort == "desc"
+      @artists = @artists.reverse
+    end
   end
 
   def show
-    puts "show:"
-    puts params[:id]
     @song = Song.new
   end
 
@@ -19,7 +21,6 @@ class ArtistsController < ApplicationController
   private
 
   def set_artist
-    puts "setting artist"
     @artist = Artist.find(params[:id])
   end
 
