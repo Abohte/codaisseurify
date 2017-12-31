@@ -1,5 +1,8 @@
 <div class="container">
   <div class="text-center">
+    <div class="col-md-10 col-md-offset-1 list-group artist-list">
+      <%= image_tag(@artist.image, class: "img-rounded img-responsive") %>
+    </div>
     <h2><%= @artist.name %></h2>
     <h4><%= @artist.artist_type %></h4>
     <button class="btn btn-xs btn-grey">

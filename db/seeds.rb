@@ -13,37 +13,37 @@ eagles = Artist.create!(
   name: "Eagles",
   description: "With five number one singles, 14 Top 40 hits, and four number one albums, the Eagles were among the most successful recording artists of the 1970s. At the end of the 20th century, two of those albums -- Their Greatest Hits (1971-1975) and Hotel California -- ranked among the ten best-selling albums ever, and the popularity of 2007's Long Road Out of Eden proved the Eagles' staying power in the new millennium.",
   artist_type: "Band",
-  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_300,w_640/v1514560820/EAGLES_bqajyv.jpg"
+  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,g_north,h_400,w_940/v1514560820/EAGLES_bqajyv.jpg"
 )
 bruce_springsteen = Artist.create!(
   name: "Bruce Springsteen",
   description: "In the decades following his emergence on the national scene in 1975, Bruce Springsteen proved to be that rarity among popular musicians, an artist who maintained his status as a frontline recording and performing star, consistently selling millions of albums and selling out arenas and stadiums around the world year after year, as well as retaining widespread critical approbation with ecstatic reviews greeting those discs and shows.",
   artist_type: "Artist",
-  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_300,w_640/v1514561307/bruce_springsteen_artist_ARIA_051212_640x360_o1hw2c.jpg"
+  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/b_rgb:000000,c_lpad,h_400,w_940/v1514727537/d7710783713677f3217a97c9e10422ef_kihbby.jpg"
 )
 leonard_cohen = Artist.create!(
   name: "Leonard Cohen",
   description: "One of the most fascinating and enigmatic -- if not the most successful -- singer/songwriters of the late '60s, Leonard Cohen retained an audience across six decades of music-making, interrupted by various digressions into personal and creative exploration, all of which have only added to the mystique surrounding him.",
   artist_type: "Artist",
-  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_300,w_640/v1514561454/leonard-cohen_jcxl44.jpg"
+  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,g_east,h_400,w_940/v1514561454/leonard-cohen_jcxl44.jpg"
 )
 dire_straits = Artist.create!(
   name: "Dire Straits",
   description: "Dire Straits emerged during the post-punk era of the late '70s, and while their sound was minimalistic and stripped down, they owed little to punk. If anything, the band was a direct outgrowth of the roots revivalism of pub rock, but where pub rock celebrated good times, Dire Straits were melancholy.",
   artist_type: "Band",
-  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_300,w_640/v1514562004/dire-straits-experience-hero_gijdo4.jpg"
+  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/b_rgb:000000,c_lpad,h_400,w_940/v1514727823/16593_rt8yyf.jpg"
 )
 rolling_stones = Artist.create!(
   name: "Rolling Stones",
   description: "By the time the Rolling Stones began calling themselves the World's Greatest Rock & Roll Band in the late '60s, they had already staked out an impressive claim on the title. As the self-consciously dangerous alternative to the bouncy Merseybeat of the Beatles in the British Invasion, the Stones had pioneered the gritty, hard-driving blues-based rock & roll that came to define hard rock.",
   artist_type: "Band",
-  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_300,w_640/v1514561724/the-rolling-stones-0_dhahj7.jpg"
+  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,g_north,h_400,w_940/v1514561724/the-rolling-stones-0_dhahj7.jpg"
 )
 bob_dylan = Artist.create!(
   name: "Bob Dylan",
   description: "Bob Dylan's influence on popular music is incalculable. As a songwriter, he pioneered several different schools of pop songwriting. As a vocalist, he broke down the notion that a singer must have a conventionally good voice in order to perform. As a musician, he sparked several genres of pop music.",
   artist_type: "Artist",
-  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_300,w_640/v1514560836/940-dylan.imgcache.rev0a3ff467e397f5898ae00a4039efbb9e.web_y7erxs.jpg"
+  remote_image_url: "http://res.cloudinary.com/abohte/image/upload/c_fill,h_400,w_940/v1514560836/940-dylan.imgcache.rev0a3ff467e397f5898ae00a4039efbb9e.web_y7erxs.jpg"
 )
 
 
