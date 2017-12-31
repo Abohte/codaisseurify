@@ -1,5 +1,6 @@
 // Add song
 function submitSong(event) {
+  clearTexts();
   event.preventDefault();
   var year = $("#song_year").val();
   var title = $("#song_title").val();
@@ -12,7 +13,6 @@ function submitSong(event) {
 }
 
 function addSong(year, title, artistId) {
-
   var newSong = { year, title, artist_id: artistId };
 
   $.ajax({
@@ -30,10 +30,12 @@ function addSong(year, title, artistId) {
     var songId = data.id;
 
     var span = $('<span class="glyphicon glyphicon-remove delete-song"></span>')
-      .click(deleteSong);
+      .click(deleteOneSong);
 
     var button = $('<button class="btn btn-xs btn-grey pull-right"></button>')
-      .append($('<div class="col-xs-1">').append(span));
+      .append(span);
+
+    var buttonDiv = $('<div class="col-xs-1">').append(button);
 
     var titleDiv = $('<div class="col-xs-10"></div>')
       .html(title);
@@ -42,22 +44,23 @@ function addSong(year, title, artistId) {
       .html(year);
 
     var row = $('<div class="row"></div)')
-      .append(yearDiv).append(titleDiv).append(button);
+      .append(yearDiv).append(titleDiv).append(buttonDiv);
 
     var listItem = $('<li class="list-group-item"></li>')
-      .attr('id', songId)
+      .attr('id', "song-" + songId)
       .append(row);
 
     $("#song-list").append(listItem);
+    $('#notice-text').text("Song added");
   })
   .fail(function(data) {
-    console.log(data)
-    $('.alert-text').text(data.responseText)
+    $('#alert-text').text(data.responseText);
   });
 }
 
 // Remove song
 function deleteOneSong(event) {
+  clearTexts();
   if(confirm("Are you sure?")) {
     var songId = $(this).closest("li").attr("id").match(/\d+/)[0];
     deleteSong(songId);
@@ -65,6 +68,7 @@ function deleteOneSong(event) {
 }
 
 function deleteAllSongs(event) {
+  clearTexts();
   event.preventDefault();
 
   if(confirm("Are you sure?")) {
@@ -92,6 +96,10 @@ function deleteSong(songId) {
   });
 }
 
+function clearTexts() {
+  $('#notice-text').text("")
+  $('#alert-text').text("");
+}
 // Call functions
 $(document).ready(function() {
   $("#new_song").bind('submit', submitSong);

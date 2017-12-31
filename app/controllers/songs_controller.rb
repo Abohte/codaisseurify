@@ -10,7 +10,7 @@ class SongsController < ApplicationController
     if @song.save
       respond_to do |format|
         format.html { redirect_to artist_path(@song.artist), notice: "Song added" }
-        format.json { render :show, status: :created, location: @song  }
+        format.json { render json: @song  }
       end
     else
       error_message = @song.errors.full_messages.join(". ").concat(".")
