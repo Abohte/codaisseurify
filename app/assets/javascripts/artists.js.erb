@@ -49,19 +49,33 @@ function addSong(year, title, artistId) {
       .append(row);
 
     $("#song-list").append(listItem);
-
+  })
+  .fail(function(data) {
+    console.log(data)
+    $('.alert-text').text(data.responseText)
   });
 }
 
 // Remove song
-function deleteSong(event) {
-  if(!confirm("Are you sure?")) {
-    return
+function deleteOneSong(event) {
+  if(confirm("Are you sure?")) {
+    var songId = $(this).closest("li").attr("id").match(/\d+/)[0];
+    deleteSong(songId);
   }
+}
 
-  var songId = $(this).closest("li").attr("id").match(/\d+/)[0];
-  console.log(songId);
+function deleteAllSongs(event) {
+  event.preventDefault();
 
+  if(confirm("Are you sure?")) {
+    $('#song-list li').each(function(i) {
+      var songId = $(this).closest("li").attr("id").match(/\d+/)[0];
+      deleteSong(songId);
+    })
+  }
+}
+
+function deleteSong(songId) {
   $.ajax({
     type: "DELETE",
     url: "/songs/" + songId + ".json",
@@ -70,13 +84,17 @@ function deleteSong(event) {
   })
   .done(function(data) {
     $('#song-'+songId).remove();
+    $('#notice-text').text("Song deleted")
+  })
+  .fail(function(data) {
+    console.log("fail");
+    $('#alert-text').text("Song could not be deleted");
   });
 }
-
-
 
 // Call functions
 $(document).ready(function() {
   $("#new_song").bind('submit', submitSong);
-  $(".delete-song").click(deleteSong);
+  $(".delete-song").click(deleteOneSong);
+  $("#delete-all-songs").click(deleteAllSongs);
 });

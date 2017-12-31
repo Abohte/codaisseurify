@@ -9,13 +9,16 @@
       <h2><%= @artist.name %></h2>
       <h4><%= @artist.artist_type %></h4>
       <button class="btn btn-xs btn-grey">
-        <%= link_to "Delete Artist", artist_path, class: "dark-text", method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Delete artist", artist_path, class: "dark-text", method: :delete, data: { confirm: "Are you sure?" } %>
+      </button> •
+      <button class="btn btn-xs btn-grey">
+        <%= link_to "Delete all songs", "", class: "dark-text", id: "delete-all-songs" %>
       </button>
     </div>
   </div>
 
   <div class="row">
-    <p class="light-text"> List of songs: </p>
+    <p class="light-text"> Songs by <%= @artist.name %>: </p>
       <ul class="list-group" id="song-list">
         <% @songs.each do |song| %>
           <%= render "songs/song_li", :song => song %>
