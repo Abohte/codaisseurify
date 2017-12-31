@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @songs = @artist.songs.order_by_year
     @song = Song.new
   end
 

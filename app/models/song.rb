@@ -3,4 +3,8 @@ class Song < ApplicationRecord
 
   validates :title, presence: true
   validates :year, presence: true
+
+  def self.order_by_year
+    order :year
+  end
 end
