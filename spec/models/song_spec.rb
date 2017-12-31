@@ -15,6 +15,16 @@ RSpec.describe Song, type: :model do
     end
   end
 
+  describe ".order_by_year" do
+    let!(:song1) { create :song, year: 1999 }
+    let!(:song2) { create :song, year: 2012 }
+    let!(:song3) { create :song, year: 1967 }
+
+    it "returns a sorted array of songs" do
+      expect(Song.order_by_year).to eq([song3, song1, song2])
+    end
+  end
+
   describe "association with artist" do
     let(:artist) { create :artist }
 

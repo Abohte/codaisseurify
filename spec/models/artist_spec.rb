@@ -34,6 +34,16 @@ RSpec.describe Artist, type: :model do
 
   end
 
+  describe ".order_by_name" do
+    let!(:artist1) { create :artist, name: "c" }
+    let!(:artist2) { create :artist, name: "a" }
+    let!(:artist3) { create :artist, name: "b" }
+
+    it "returns a sorted array of artists" do
+      expect(Artist.order_by_name).to eq([artist2, artist3, artist1])
+    end
+  end
+
   describe "association with songs" do
     let(:artist) { create :artist }
     let!(:song) { create :song, artist: artist }

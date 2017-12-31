@@ -10,7 +10,7 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to artist_path(@song.artist), notice: "Song added"
     else
-      redirect_to artist_path(@song.artist), alert: @song.errors.full_messages.join(". ").concat(".") 
+      redirect_to artist_path(@song.artist), notice: "Song not added", alert: @song.errors.full_messages.join(". ").concat(".") 
     end
   end
 
