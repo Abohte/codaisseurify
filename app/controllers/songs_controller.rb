@@ -10,14 +10,18 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to artist_path(@song.artist), notice: "Song added"
     else
-      redirect_to artist_path(@song.artist), notice: "Song not added", alert: @song.errors.full_messages.join(". ").concat(".") 
+      redirect_to artist_path(@song.artist), notice: "Song not added", alert: @song.errors.full_messages.join(". ").concat(".")
     end
   end
 
   def destroy
     @artist = @song.artist
     @song.destroy
-    redirect_to @artist, notice: "Song deleted"
+    
+    respond_to do |format|
+      format.html { redirect_to @artist, notice: "Song deleted" }
+      format.json { head :no_content }
+    end
   end
 
   private

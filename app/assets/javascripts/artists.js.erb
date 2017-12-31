@@ -53,15 +53,24 @@ function addSong(year, title, artistId) {
   });
 }
 
-
-
 // Remove song
 function deleteSong(event) {
-  if(confirm("Are you sure?")) {
-    console.log("delete");
-    var songId = $(this).closest("li").attr("id").match(/\d+/)[0];
-    console.log(songId);
+  if(!confirm("Are you sure?")) {
+    return
   }
+
+  var songId = $(this).closest("li").attr("id").match(/\d+/)[0];
+  console.log(songId);
+
+  $.ajax({
+    type: "DELETE",
+    url: "/songs/" + songId + ".json",
+    contentType: "application/json",
+    dataType: "json"
+  })
+  .done(function(data) {
+    $('#song-'+songId).remove();
+  });
 }
 
 
