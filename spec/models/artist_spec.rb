@@ -20,11 +20,18 @@ RSpec.describe Artist, type: :model do
       expect(artist.errors).to have_key(:description)
     end
 
-    it "is invalid without a type" do
+    it "is invalid without an artist type" do
       artist = Artist.new(artist_type: nil)
       artist.valid?
       expect(artist.errors).to have_key(:artist_type)
     end
+
+    it "is invalid without an image" do
+      artist = Artist.new(image: nil)
+      artist.valid?
+      expect(artist.errors).to have_key(:image)
+    end
+
   end
 
   describe "association with songs" do
