@@ -55,7 +55,11 @@ function addSong(year, title, artistId) {
       return +($(this).find('.song-year').text()) < year;
     })
 
-    listItem.insertAfter(filteredSongs.last())
+    if (filteredSongs.length === 0) {
+      $('#song-list').append(listItem);
+    } else {
+      listItem.insertAfter(filteredSongs.last())
+    }
 
     $('#notice-text').text("Song added");
   })
