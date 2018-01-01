@@ -13,7 +13,10 @@ feature 'Manage songs', js: true do
   scenario 'remove a song' do
     submit_new_song(1984, 'Wake Me Up (Before You Go Go)')
     sleep(1)
-    page.find_by_id('delete-song').click
+    within('#song-1') do
+      find('.delete-song').click
+    end
+
     sleep(1)
     page.accept_alert
 

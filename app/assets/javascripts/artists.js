@@ -29,10 +29,10 @@ function addSong(year, title, artistId) {
 
     var songId = data.id;
 
-    var span = $('<span class="glyphicon glyphicon-remove" id="delete-song"></span>')
+    var span = $('<span class="glyphicon glyphicon-remove"></span>')
       .click(deleteOneSong);
 
-    var button = $('<button class="btn btn-xs btn-grey pull-right"></button>')
+    var button = $('<button class="btn btn-xs btn-grey pull-right delete-song"></button>')
       .append(span);
 
     var buttonDiv = $('<div class="col-xs-1">').append(button);
@@ -104,6 +104,6 @@ function clearTexts() {
 // Call functions
 $(document).ready(function() {
   $("#new_song").bind('submit', submitSong);
-  $("#delete-song").click(deleteOneSong);
+  $(".delete-song").click(deleteOneSong);
   $("#delete-all-songs").click(deleteAllSongs);
 });
