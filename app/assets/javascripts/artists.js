@@ -35,12 +35,13 @@ function addSong(year, title, artistId) {
     var button = $('<button class="btn btn-xs btn-grey pull-right delete-song"></button>')
       .append(span);
 
-    var buttonDiv = $('<div class="col-xs-1">').append(button);
+    var buttonDiv = $('<div class="col-xs-1">')
+      .append(button);
 
     var titleDiv = $('<div class="col-xs-10"></div>')
       .html(title);
 
-    var yearDiv = $('<div class="col-xs-1"></div')
+    var yearDiv = $('<div class="col-xs-1 song-year"></div')
       .html(year);
 
     var row = $('<div class="row"></div)')
@@ -50,7 +51,11 @@ function addSong(year, title, artistId) {
       .attr('id', "song-" + songId)
       .append(row);
 
-    $("#song-list").append(listItem);
+    var filteredSongs = $(".list-group-item").filter(function(i) {
+      return +($(this).find('.song-year').text()) < year;
+    })
+
+    listItem.insertAfter(filteredSongs.last())
 
     $('#notice-text').text("Song added");
   })
