@@ -51,6 +51,7 @@ function addSong(year, title, artistId) {
       .append(row);
 
     $("#song-list").append(listItem);
+
     $('#notice-text').text("Song added");
   })
   .fail(function(data) {
@@ -103,6 +104,6 @@ function clearTexts() {
 // Call functions
 $(document).ready(function() {
   $("#new_song").bind('submit', submitSong);
-  $(".delete-song").click(deleteOneSong);
+  $("#delete-song").click(deleteOneSong);
   $("#delete-all-songs").click(deleteAllSongs);
 });
