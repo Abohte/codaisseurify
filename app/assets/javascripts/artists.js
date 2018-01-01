@@ -29,7 +29,7 @@ function addSong(year, title, artistId) {
 
     var songId = data.id;
 
-    var span = $('<span class="glyphicon glyphicon-remove delete-song"></span>')
+    var span = $('<span class="glyphicon glyphicon-remove" id="delete-song"></span>')
       .click(deleteOneSong);
 
     var button = $('<button class="btn btn-xs btn-grey pull-right"></button>')

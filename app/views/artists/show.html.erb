@@ -11,7 +11,7 @@
       <button class="btn btn-xs btn-grey">
         <%= link_to "Delete artist", artist_path, class: "dark-text", method: :delete, data: { confirm: "Are you sure?" } %>
       </button> •
-      <button class="btn btn-xs btn-grey">
+      <button class="btn btn-xs btn-grey" id="delete-songs-btn">
         <%= link_to "Delete all songs", "", class: "dark-text", id: "delete-all-songs" %>
       </button>
     </div>
