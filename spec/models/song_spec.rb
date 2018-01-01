@@ -13,6 +13,18 @@ RSpec.describe Song, type: :model do
       song.valid?
       expect(song.errors).to have_key(:year)
     end
+
+    it "is invalid if year consist of more than 4 numbers" do
+      song = Song.new(year: 12345)
+      song.valid?
+      expect(song.errors).to have_key(:year)
+    end
+
+    it "is invalid if year consist of less than 4 numbers" do
+      song = Song.new(year: 123)
+      song.valid?
+      expect(song.errors).to have_key(:year)
+    end
   end
 
   describe ".order_by_year" do
