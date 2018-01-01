@@ -12,6 +12,7 @@ feature 'Manage songs', js: true do
 
   scenario 'remove a song' do
     submit_new_song(1984, 'Wake Me Up (Before You Go Go)')
+
     sleep(1)
     within('#song-1') do
       find('.delete-song').click
@@ -28,11 +29,14 @@ feature 'Manage songs', js: true do
     submit_new_song(1984, 'Wake Me Up (Before You Go Go)')
     submit_new_song(1986, 'The Final Countdown')
     click_link('delete-all-songs')
+
     sleep(1)
     page.accept_alert
 
     expect(page).to have_no_content('Wake Me Up (Before You Go Go)')
     expect(page).to have_no_content('1984')
+    expect(page).to have_no_content('The Final Countdown')
+    expect(page).to have_no_content('1986')
   end
 
   def submit_new_song(year, title)
