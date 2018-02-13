@@ -1,6 +1,6 @@
 # Codaisseurify
 
-Simple Rails app made following week 2 of the 9-week Codaisseur Academy.
+Simple Rails app made following week 3 of the 9-week Codaisseur Academy.
 
 Assignment: create an app in charge of managing a collection of songs and their associated artists, using Rails and PostgreSQL. Adding and removing songs via AJAX - DOM manipulation.
 
