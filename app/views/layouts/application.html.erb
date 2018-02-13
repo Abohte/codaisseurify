@@ -6,14 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js' %>
   </head>
 
   <body>
 
     <%= render "shared/navbar" %>
 
-    <p class="notice light-text"><%= notice %></p>
-    <p class="alert alert-text"><%= alert %></p>
+    <p class="notice light-text" id="notice-text"><%= notice %></p>
+    <p class="alert alert-text" id="alert-text"><%= alert %></p>
 
     <div class="container-fluid">
       <%= yield %>

@@ -8,16 +8,30 @@ class SongsController < ApplicationController
   def create
     @song = Song.create(song_params)
     if @song.save
-      redirect_to artist_path(@song.artist), notice: "Song added"
+      respond_to do |format|
+        format.html { redirect_to artist_path(@song.artist), notice: "Song added" }
+        format.json { render json: @song  }
+      end
     else
-      redirect_to artist_path(@song.artist), notice: "Song not added", alert: @song.errors.full_messages.join(". ").concat(".") 
+      error_message = @song.errors.full_messages.join(". ").concat(".")
+      respond_to do |format|
+        format.html {redirect_to artist_path(@song.artist),
+          notice: "Song not added",
+          alert: error_message }
+        format.json { render json: error_message, status: :unprocessable_entity }
+      end
     end
+
   end
 
   def destroy
     @artist = @song.artist
     @song.destroy
-    redirect_to @artist, notice: "Song deleted"
+
+    respond_to do |format|
+      format.html { redirect_to @artist, notice: "Song deleted" }
+      format.json { head :no_content }
+    end
   end
 
   private
