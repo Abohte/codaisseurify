@@ -4,6 +4,9 @@ Simple Rails app made during the Codaisseur Academy.
 
 Assignment: create an app in charge of managing a collection of songs and their associated artists, using Rails and PostgreSQL. Adding and removing songs via AJAX - DOM manipulation.
 
+![Home Page](app/assets/images/CodaisseurifyHomePage.png)
+![Artist Page](app/assets/images/CodaisseurifyArtistPage.png)
+
 ## Steps
 
 While working on this app I followed these steps:
