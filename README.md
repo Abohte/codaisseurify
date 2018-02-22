@@ -2,7 +2,14 @@
 
 Simple Rails app made following week 3 of the 9-week Codaisseur Academy.
 
-Assignment: create an app in charge of managing a collection of songs and their associated artists, using Rails and PostgreSQL. Adding and removing songs via AJAX - DOM manipulation.
+### Assignment
+Create an app in charge of managing a collection of songs and their associated artists, using Rails and PostgreSQL. Adding and removing songs must be done via AJAX - DOM manipulation.
+
+#### Requirements:
+- Artists overview page with image for each artist.
+- Artist show page with a list of songs. A song can be added/deleted or all songs can be deleted.
+- An artist can be deleted. All associated songs must be deleted.
+- Include model tests and integration tests (for adding/removing).
 
 ![Home Page](app/assets/images/CodaisseurifyHomePage.png)
 ![Artist Page](app/assets/images/CodaisseurifyArtistPage.png)
@@ -22,13 +29,13 @@ While working on this app I followed these steps:
 
 ## Database Structure
 
-1. Artists
+#### Artists
   * name:string
   * description:text
   * artist_type:string
   * image:string
 
-2. Songs
+#### Songs
   * name:string
   * year:integer
   * artist_id:bigint
